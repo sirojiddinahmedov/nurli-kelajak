@@ -1,14 +1,497 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nurli Kelajak</title>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nurli Kelajak — Ta'lim Markazi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
 </head>
 <body>
-    
+!-- ===================== NAVBAR ===================== -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+        <a href="#" class="navbar__logo" aria-label="Nurli Kelajak home">
+            <div class="navbar__logo-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+            </div>
+            <span class="navbar__logo-text">Nurli <span>Kelajak</span></span>
+        </a>
+        <ul class="navbar__links" role="list">
+            <li><a href="#courses">Kurslar</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Aloqa</a></li>
+        </ul>
+        <div class="navbar__actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+                </svg>
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+            </button>
+            <button class="navbar__hamburger" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
 
-    <script src="./js/script.js"></script>
+<!-- ===================== SIDEBAR ===================== -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+<aside class="sidebar" id="sidebar" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
+    <div class="sidebar__header">
+        <a href="#" class="navbar__logo">
+            <div class="navbar__logo-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="white">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg></div>
+            <span class="navbar__logo-text">Nurli <span>Kelajak</span></span>
+        </a>
+        <button class="sidebar__close" id="sidebarClose" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </button>
+    </div>
+    <nav class="sidebar__nav">
+        <a href="#courses"><span class="nav-icon">📚</span>Kurslar</a>
+        <a href="#faq"><span class="nav-icon">❓</span>Savol-Javob</a>
+        <a href="#contact"><span class="nav-icon">📞</span>Aloqa</a>
+    </nav>
+    <div class="sidebar__cta">
+        <a href="#contact" class="sidebar__cta-btn">Hoziroq ro'yxatdan o'ting →</a>
+    </div>
+</aside>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home" aria-labelledby="hero-heading">
+    <div class="hero__bg" aria-hidden="true">
+        <div class="hero__bg-grid"></div>
+        <div class="hero__bg-blob hero__bg-blob--1"></div>
+        <div class="hero__bg-blob hero__bg-blob--2"></div>
+        <div class="hero__bg-blob hero__bg-blob--3"></div>
+    </div>
+    <div class="hero__inner">
+        <div class="hero__badge"><span class="hero__badge-dot">✦</span>Toshkentdagi #1 Ta'lim Markazi</div>
+        <h1 class="hero__heading" id="hero-heading"><em>Nurli Kelajak</em> bilan<br>Orzularingizga Erishing</h1>
+        <p class="hero__sub">Matematika, Ingliz tili va IT bo'yicha ekspert o'qituvchilar bilan bilimingizni chuqurlashtiring. Kelajagingizni bugundan boshlang.</p>
+        <div class="hero__actions">
+            <a href="#courses" class="btn-primary">
+                Kurslarni ko'rish
+                <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </a>
+            <!-- Hero "Ro'yxatdan o'tish" → modal ochadi -->
+            <button class="btn-secondary" data-open-modal data-course="Umumiy" data-emoji="🎓" data-price="Kursga qarab">
+                Ro'yxatdan o'tish
+            </button>
+        </div>
+        <div class="hero__stats">
+            <div class="hero__stat">
+                <div class="hero__stat-value">2400<span>+</span></div>
+                <div class="hero__stat-label">O'quvchilar</div>
+            </div>
+            <div class="hero__stat">
+                <div class="hero__stat-value">98<span>%</span></div>
+                <div class="hero__stat-label">Muvaffaqiyat</div>
+            </div>
+            <div class="hero__stat">
+                <div class="hero__stat-value">15<span>+</span></div>
+                <div class="hero__stat-label">Yillik tajriba</div>
+            </div>
+            <div class="hero__stat">
+                <div class="hero__stat-value">40<span>+</span></div>
+                <div class="hero__stat-label">Ekspert o'qituvchi</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== COURSES ===================== -->
+<section class="courses" id="courses" aria-labelledby="courses-heading">
+    <div class="courses__inner">
+        <p class="section-label reveal">Bizning kurslar</p>
+        <h2 class="section-heading reveal reveal--delay-1" id="courses-heading">Qiziqishingizga mos kurs tanlang</h2>
+        <p class="section-sub reveal reveal--delay-2">Har bir kurs individual yondashuv va amaliy bilim asosida tuzilgan.</p>
+        <div class="courses__grid">
+
+            <!-- MATH -->
+            <article class="course-card course-card--math reveal reveal--delay-1">
+                <div class="course-card__icon-wrap">🧮</div>
+                <span class="course-card__badge">Matematika</span>
+                <h3 class="course-card__title">Matematika</h3>
+                <p class="course-card__desc">Algebra, geometriya va olimpiada tayyorgarligiga qadar chuqur o'rgatamiz.</p>
+                <ul class="course-card__features">
+                    <li class="course-card__feature">Kichik guruhlar (maks. 8 kishi)</li>
+                    <li class="course-card__feature">Hafta 3 marta, 90 daqiqa</li>
+                    <li class="course-card__feature">Imtihon materiallari bepul</li>
+                    <li class="course-card__feature">Online va offline rejimlar</li>
+                </ul>
+                <div class="course-card__footer">
+                    <div class="course-card__price">
+                        <span class="course-card__price-label">Oylik to'lov</span>
+                        <span class="course-card__price-value">380 000 so'm</span>
+                    </div>
+                    <button class="course-card__btn" data-open-modal data-course="Matematika" data-emoji="🧮" data-price="380 000 so'm">
+                        Ro'yxatdan o'tish
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </button>
+                </div>
+            </article>
+
+            <!-- ENGLISH -->
+            <article class="course-card course-card--english reveal reveal--delay-2">
+                <div class="course-card__icon-wrap">🌍</div>
+                <span class="course-card__badge">Ingliz tili</span>
+                <h3 class="course-card__title">Ingliz Tili</h3>
+                <p class="course-card__desc">So'zlashuv, grammatika va IELTS / TOEFL imtihonlariga professional tayyorgarlik.</p>
+                <ul class="course-card__features">
+                    <li class="course-card__feature">Native speaker bilan amaliyot</li>
+                    <li class="course-card__feature">A1 dan C2 gacha barcha darajalar</li>
+                    <li class="course-card__feature">Kundalik so'zlashuv mashqlari</li>
+                    <li class="course-card__feature">IELTS band 7+ kafolati</li>
+                </ul>
+                <div class="course-card__footer">
+                    <div class="course-card__price">
+                        <span class="course-card__price-label">Oylik to'lov</span>
+                        <span class="course-card__price-value">420 000 so'm</span>
+                    </div>
+                    <button class="course-card__btn" data-open-modal data-course="Ingliz Tili" data-emoji="🌍" data-price="420 000 so'm">
+                        Ro'yxatdan o'tish
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </button>
+                </div>
+            </article>
+
+            <!-- IT -->
+            <article class="course-card course-card--it reveal reveal--delay-3">
+                <div class="course-card__icon-wrap">💻</div>
+                <span class="course-card__badge">IT / Dasturlash</span>
+                <h3 class="course-card__title">IT & Dasturlash</h3>
+                <p class="course-card__desc">Python, Web-dasturlash, SQL va real loyiha tajribasi orqali IT sohasiga kirish.</p>
+                <ul class="course-card__features">
+                    <li class="course-card__feature">Real loyihalar bilan amaliyot</li>
+                    <li class="course-card__feature">Python, JavaScript, SQL</li>
+                    <li class="course-card__feature">Portfolio yaratish yordami</li>
+                    <li class="course-card__feature">Ish joyi topishda ko'mak</li>
+                </ul>
+                <div class="course-card__footer">
+                    <div class="course-card__price">
+                        <span class="course-card__price-label">Oylik to'lov</span>
+                        <span class="course-card__price-value">500 000 so'm</span>
+                    </div>
+                    <button class="course-card__btn" data-open-modal data-course="IT va Dasturlash" data-emoji="💻" data-price="500 000 so'm">
+                        Ro'yxatdan o'tish
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="faq__inner">
+        <p class="section-label reveal">Savol-Javob</p>
+        <h2 class="section-heading reveal reveal--delay-1" id="faq-heading">Ko'p so'raladigan savollar</h2>
+        <p class="section-sub reveal reveal--delay-2">Qo'shimcha savollaringiz bo'lsa, biz bilan bog'laning.</p>
+        <div class="faq__list reveal reveal--delay-2">
+
+            <div class="faq__item">
+                <button class="faq__question" aria-expanded="false">Darslar qaysi tilda olib boriladi?<span class="faq__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></span></button>
+                <div class="faq__body">
+                    <div class="faq__body-inner">
+                        <p class="faq__answer">Barcha kurslar O'zbek tilida olib boriladi. Ingliz tili kursida darsning ma'lum qismi ingliz tilida bo'ladi — bu o'quvchilarning nutq ko'nikmalarini real muhitda rivojlantiradi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item">
+                <button class="faq__question" aria-expanded="false">Darslar qanday jadvalda bo'ladi?<span class="faq__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></span></button>
+                <div class="faq__body">
+                    <div class="faq__body-inner">
+                        <p class="faq__answer">Kurslar haftasiga 3 marta, har biri 90 daqiqa davomida o'tkaziladi. Ertalabki (09:00–13:00) va kechki (15:00–20:00) guruhlar mavjud. Ro'yxatdan o'tishda o'zingizga qulay vaqtni tanlashingiz mumkin.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item">
+                <button class="faq__question" aria-expanded="false">Sinov darsi bo'ladimi?<span class="faq__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></span></button>
+                <div class="faq__body">
+                    <div class="faq__body-inner">
+                        <p class="faq__answer">Ha, har bir yangi o'quvchi uchun bitta bepul sinov darsi mavjud. Bu siz uchun ham, bizning o'qituvchilarimiz uchun ham o'quvchining darajasini aniqlab, to'g'ri guruhga joylashtirish imkonini beradi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item">
+                <button class="faq__question" aria-expanded="false">Online darslar ham bormi?<span class="faq__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></span></button>
+                <div class="faq__body">
+                    <div class="faq__body-inner">
+                        <p class="faq__answer">Ha, Zoom orqali to'liq online format ham mavjud. Online darslar offline darslar bilan bir xil sifat va o'qituvchilar tomonidan olib boriladi. Barcha materiallar elektron ko'rinishda taqdim etiladi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item">
+                <button class="faq__question" aria-expanded="false">To'lov qanday amalga oshiriladi?<span class="faq__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></span></button>
+                <div class="faq__body">
+                    <div class="faq__body-inner">
+                        <p class="faq__answer">To'lov har oyning 1–5 kunlari amalga oshiriladi. Naqd pul, Click, Payme yoki bank o'tkazmasi orqali to'lash mumkin. Muddatli to'lov va chegirmalar haqida administrator bilan gaplashing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item">
+                <button class="faq__question" aria-expanded="false">Guruh nechta kishidan iborat?<span class="faq__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></span></button>
+                <div class="faq__body">
+                    <div class="faq__body-inner">
+                        <p class="faq__answer">Har bir guruhda maksimal 8 nafar o'quvchi bo'ladi. Bu o'qituvchiga har bir o'quvchiga yetarlicha e'tibor qaratish imkonini beradi. Individual (yakka) darslar ham mavjud.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item">
+                <button class="faq__question" aria-expanded="false">Sertifikat beriladimi?<span class="faq__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></span></button>
+                <div class="faq__body">
+                    <div class="faq__body-inner">
+                        <p class="faq__answer">Ha, kursni muvaffaqiyatli yakunlagan barcha o'quvchilarga "Nurli Kelajak" ta'lim markazi sertifikati beriladi. IT kursida loyiha himoyasidan keyin qo'shimcha portfel sertifikati ham taqdim etiladi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item">
+                <button class="faq__question" aria-expanded="false">Bolam uchun qaysi yoshdan kurs bor?<span class="faq__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></span></button>
+                <div class="faq__body">
+                    <div class="faq__body-inner">
+                        <p class="faq__answer">Kurslarimiz 7 yoshdan katta barcha yoshdagilar uchun mo'ljallangan. Boshlang'ich sinf o'quvchilari uchun maxsus moslashtirilgan dasturlar mavjud. Kattalar uchun alohida kechki guruhlar tashkil etiladi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item">
+                <button class="faq__question" aria-expanded="false">Darsga qatnasholmasam nima bo'ladi?<span class="faq__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></span></button>
+                <div class="faq__body">
+                    <div class="faq__body-inner">
+                        <p class="faq__answer">O'tkazib yuborilgan darslarni boshqa guruh bilan qayta ishlash imkoniyati mavjud. Bundan tashqari, har bir darsning yozuvi Telegram kanalimizga yuklanadi — o'quvchilar istalgan vaqtda qayta ko'rishlari mumkin.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__item">
+                <button class="faq__question" aria-expanded="false">Ro'yxatdan o'tgandan so'ng qachon bog'lanishadi?<span class="faq__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></span></button>
+                <div class="faq__body">
+                    <div class="faq__body-inner">
+                        <p class="faq__answer">Arizangiz qabul qilinganidan so'ng 15 daqiqa ichida (ish vaqtida) operatorimiz siz bilan telefon yoki Telegram orqali bog'lanadi. Ish vaqtidan keyin kelgan arizalar keyingi ish kuni ertalab ko'rib chiqiladi.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="contact__inner">
+        <p class="section-label reveal">Aloqa</p>
+        <h2 class="section-heading reveal reveal--delay-1" id="contact-heading">Biz bilan bog'laning</h2>
+        <p class="section-sub reveal reveal--delay-2">Ariza qoldiring yoki to'g'ridan-to'g'ri markaz bilan bog'laning.</p>
+
+        <div class="contact__grid">
+
+            <!-- LEFT: Map + Info cards -->
+            <div style="display:flex;flex-direction:column;gap:20px;" class="reveal">
+                <div class="contact__map-wrap">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d374.9767741060797!2d66.22738747229731!3d40.12806700965297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDA3JzQxLjAiTiA2NsKwMTMnMzguNiJF!5e0!3m2!1suz!2suz!4v1710000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Nurli Kelajak manzili">
+                    </iframe>
+                </div>
+                <div class="contact__info">
+                    <div class="contact__info-card">
+                        <div class="contact__info-icon">📍</div>
+                        <div>
+                            <p class="contact__info-label">Manzil</p>
+                            <p class="contact__info-value">Toshkent shahri (40.1281°N, 66.2274°E)</p>
+                        </div>
+                    </div>
+                    <div class="contact__info-card">
+                        <div class="contact__info-icon">📞</div>
+                        <div>
+                            <p class="contact__info-label">Telefon</p>
+                            <p class="contact__info-value">+998 90 000 00 00</p>
+                        </div>
+                    </div>
+                    <div class="contact__info-card">
+                        <div class="contact__info-icon">🕐</div>
+                        <div>
+                            <p class="contact__info-label">Ish vaqti</p>
+                            <p class="contact__info-value">Dushanba – Shanba: 09:00 – 20:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Quick Form -->
+            <div class="qform reveal reveal--delay-2">
+                <h3 class="qform__heading">Ariza qoldiring</h3>
+                <p class="qform__sub">Operator 15 daqiqa ichida siz bilan bog'lanadi</p>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="qf-name">Ismingiz *</label>
+                        <input class="form-input" id="qf-name" type="text" placeholder="Ism Familiya" autocomplete="name" />
+                        <p class="form-error" id="qf-name-err">Ism kamida 2 ta harf bo'lishi kerak</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="qf-phone">Telefon *</label>
+                        <input class="form-input" id="qf-phone" type="tel" placeholder="+998 90 123 45 67" autocomplete="tel" />
+                        <p class="form-error" id="qf-phone-err">To'g'ri telefon raqam kiriting</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="qf-course">Qaysi kurs?</label>
+                    <select class="form-input" id="qf-course">
+                        <option value="">Kurs tanlang (ixtiyoriy)</option>
+                        <option value="math">Matematika</option>
+                        <option value="english">Ingliz tili</option>
+                        <option value="it">IT & Dasturlash</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="qf-msg">Xabar (ixtiyoriy)</label>
+                    <textarea class="form-input" id="qf-msg" rows="3" placeholder="Savol yoki izoh..."></textarea>
+                </div>
+
+                <button class="qform__submit" id="quickFormSubmit">Ariza yuborish →</button>
+                <div class="qform__success" id="quickFormSuccess" hidden>✅ Arizangiz qabul qilindi! Tez orada bog'lanamiz.</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+    <p class="footer__text">© 2025 <span>Nurli Kelajak</span> Ta'lim Markazi. Barcha huquqlar himoyalangan. Toshkent, O'zbekiston.</p>
+</footer>
+
+<!-- ===================== MODAL ===================== -->
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
+<div class="modal" id="regModal" role="dialog" aria-modal="true" aria-label="Ro'yxatdan o'tish" aria-hidden="true">
+    <div class="modal__box">
+        <div class="modal__header">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+                <div class="modal__course-icon" id="modalCourseIcon">🎓</div>
+                <div>
+                    <h2 class="modal__title">Ro'yxatdan o'tish</h2>
+                    <p class="modal__sub" id="modalSub">Kurs uchun ariza</p>
+                </div>
+            </div>
+            <button class="modal__close" id="modalClose" aria-label="Yopish">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="modal__price-badge">💰 <span id="modalPriceTag">Narx: —</span></div>
+
+        <div id="modalBody">
+            <div class="form-group">
+                <label class="form-label" for="m-name">Ismingiz *</label>
+                <input class="form-input" id="m-name" type="text" placeholder="Ism Familiya" autocomplete="name" />
+                <p class="form-error" id="m-name-err">Ism kamida 2 ta harf bo'lishi kerak</p>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="m-phone">Telefon raqam *</label>
+                <input class="form-input" id="m-phone" type="tel" placeholder="+998 90 123 45 67" autocomplete="tel" />
+                <p class="form-error" id="m-phone-err">To'g'ri telefon raqam kiriting</p>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="m-level">Daraja</label>
+                <select class="form-input" id="m-level">
+                    <option value="beginner">Boshlang'ich</option>
+                    <option value="intermediate">O'rta</option>
+                    <option value="advanced">Yuqori</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="m-msg">Qo'shimcha xabar</label>
+                <textarea class="form-input" id="m-msg" rows="3" placeholder="Savol yoki izoh..."></textarea>
+            </div>
+            <button class="modal__submit" id="modalSubmit">Arizani yuborish →</button>
+        </div>
+
+        <div class="modal__success" id="modalSuccess" hidden>
+            <div class="modal__success-icon">🎉</div>
+            <h3 class="modal__success-title">Ariza qabul qilindi!</h3>
+            <p class="modal__success-text">Operator <strong>15 daqiqa</strong> ichida siz bilan bog'lanadi. Rahmat!</p>
+            <button class="btn-primary" id="modalSuccessClose" style="margin:0 auto;">Yopish</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script src="/js/script.js"></script>
 </body>
 </html>
